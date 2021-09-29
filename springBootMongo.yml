@@ -20,6 +20,8 @@ apiVersion: v1
 kind: PersistentVolume
 metadata:
   name: pv-hostpath
+  labels:
+    name: pv-hostpath
 spec:
   storageClassName: manual
   capacity:
@@ -40,6 +42,9 @@ spec:
   resources:
     requests:
       storage: 100Mi
+  selector:
+    matchLabels:
+      name: pv-hostpath      
 
 ---
 ## Spring Boot App
