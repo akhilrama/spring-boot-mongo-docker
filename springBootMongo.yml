@@ -41,10 +41,7 @@ spec:
   - ReadWriteOnce
   resources:
     requests:
-      storage: 100Mi
-  selector:
-    matchLabels:
-      name: pv-hostpath      
+      storage: 100Mi     
 
 ---
 ## Spring Boot App
