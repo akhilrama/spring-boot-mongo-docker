@@ -24,6 +24,9 @@ metadata:
     name: pv-hostpath
 spec:
   storageClassName: manual
+  claimRef:
+    name: pvc-hostpath
+    namespace: foo
   capacity:
     storage: 1Gi
   accessModes:
@@ -35,8 +38,10 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: pvc-hostpath
+  namespace: foo
 spec:
   storageClassName: manual
+  volumeName: pv-hostpath
   accessModes:
   - ReadWriteOnce
   resources:
